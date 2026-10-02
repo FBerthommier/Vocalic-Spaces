@@ -5,18 +5,18 @@ to reproduce the simulations, figures, tables and multimedia files of:
 
 > **Frédéric Berthommier**, *A mathematical model of the vowel space*
 > (Univ. Grenoble Alpes, CNRS, Grenoble INP, GIPSA-lab).
-> **Research article (canonical): [arXiv:2111.00868](https://arxiv.org/abs/2111.00868)**
-> — the article itself is not hosted here.
+> **Research article (canonical): [arXiv:2111.00868v3](https://arxiv.org/abs/2111.00868v3)**
+> (v2 is a dead version).
 
 **New to the model?** Start with the didactic introduction
 [`docs/tutorial.pdf`](docs/tutorial.pdf) (US English): theory, worked
 examples, guided tour of the code, exercises.
 
-An **open-access two-column LaTeX edition of the article** (free
-template, no proprietary JASA class) is provided as *source only* in
-[`paper/`](paper/README.md) with an Overleaf/arXiv-ready package
-([`paper/arxiv_submission.zip`](paper/arxiv_submission.zip), `.bbl`
-included) and a strict content verification script
+An **open-access two-column edition of the article** (free template, no
+proprietary JASA class) is provided in [`paper/`](paper/paper.pdf)
+(LaTeX source + compiled PDF + Overleaf/arXiv-ready package
+[`paper/arxiv_submission.zip`](paper/arxiv_submission.zip), `.bbl`
+included) with a strict content verification script
 ([`scripts/verify_paper.py`](scripts/verify_paper.py)).
 
 The paper establishes a bijection between the vowel space (F1, F2) and the

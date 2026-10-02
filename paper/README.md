@@ -1,32 +1,31 @@
-# Open-access two-column edition of the article — SOURCE only
+# Open-access two-column edition of the article
 
-This folder holds the **LaTeX source and the arXiv submission package**
-of *A mathematical model of the vowel space*, F. Berthommier, in a
-two-column layout equivalent to the JASA-EL "reprint" form, built
-exclusively with free components (standard `article` class,
-`natbib`/`plainnat`, `TIPA`, `newtx`, `empheq`, `caption`, `hyperref`).
+This folder holds the **LaTeX source, the compiled `paper.pdf` (11
+pages) and the arXiv submission package** of *A mathematical model of
+the vowel space*, F. Berthommier, in a two-column layout equivalent to
+the JASA-EL "reprint" form, built exclusively with free components
+(standard `article` class, `natbib`/`plainnat`, `TIPA`, `newtx`,
+`empheq`, `caption`, `hyperref`).
 
-**The compiled article is not distributed in this repository.**  The
-canonical, citable version is the arXiv record:
-<https://arxiv.org/abs/2111.00868>.  To read the paper locally, compile
-this folder (`build.bat`, or upload `arxiv_submission.zip` to Overleaf);
-for the theory, a didactic introduction is provided in
+The canonical, citable record is **arXiv:2111.00868v3**
+(<https://arxiv.org/abs/2111.00868v3>; note: v2 is a dead version).
+A didactic introduction is provided in
 [`../docs/tutorial.pdf`](../docs/tutorial.pdf).
 
 ## Overleaf / arXiv
 
-* **arXiv**: upload `arxiv_submission.zip` as-is.  It contains the flat
-  set `paper.tex`, `Paperbib.bib`, the **pre-compiled `paper.bbl`**
+* **arXiv (v3)**: upload `arxiv_submission.zip` as-is.  It contains the
+  flat set `paper.tex`, `Paperbib.bib`, the **pre-compiled `paper.bbl`**
   (arXiv does not run BibTeX) and the seven figures.
 * **Overleaf**: create a new project from the same files; compile with
   pdfLaTeX.
 * Build locally: `build.bat` (pdfLaTeX + BibTeX + 2 passes) → produces
-  `paper.pdf` (11 pages), which is kept out of version control.
+  `paper.pdf`.
 
-Before (re)submitting, set the real repository URL in `paper.tex`:
+The repository URL is set in `paper.tex`:
 
 ```latex
-\newcommand{\repobase}{https://github.com/username/vowel-space-model}
+\newcommand{\repobase}{https://github.com/FBerthommier/vocalic-spaces}
 ```
 
 ## Cosmetic changes applied to the submission source

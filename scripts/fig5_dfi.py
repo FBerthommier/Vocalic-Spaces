@@ -50,7 +50,7 @@ def panel(ax, cyc, mc, title, pad=0.12, ngrid=60):
     ax.scatter(mc['a1r'], mc['a2r'], df2r, c='r', s=1.5, alpha=0.45,
                depthshade=False)
 
-    ax.set_xlim(x0, x1)
+    ax.set_xlim(x1, x0)          # a1 axis reversed, as in the article
     ax.set_ylim(y0, y1)
     ax.set_zlim(-1, 1)
     ax.set_xlabel(r'$\tilde{a}_1$')
