@@ -25,7 +25,7 @@ A didactic introduction is provided in
 The repository URL is set in `paper.tex`:
 
 ```latex
-\newcommand{\repobase}{https://github.com/FBerthommier/vocalic-spaces}
+\newcommand{\repobase}{https://github.com/FBerthommier/Vocalic-Spaces}
 ```
 
 ## Cosmetic changes applied to the submission source

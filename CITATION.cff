@@ -9,7 +9,7 @@ authors:
     given-names: Frédéric
     email: frederic.berthommier@gipsa-lab.grenoble-inp.fr
     affiliation: Univ. Grenoble Alpes, CNRS, Grenoble INP, GIPSA-lab
-repository-code: 'https://github.com/FBerthommier/vocalic-spaces'
+repository-code: 'https://github.com/FBerthommier/Vocalic-Spaces'
 abstract: >-
   Python translation and reproduction package of the simulations of the
   article "A mathematical model of the vowel space": three-phase mixing
