@@ -88,9 +88,13 @@ citations.
 - `arxiv_submission.zip` — flat Overleaf/arXiv package
 - `build.bat` — local build script
 
-## License of the document
+## License
 
-The *code* of the repository is MIT (top-level `LICENSE`).  For the
-*article document*, the author chooses the license; **CC BY 4.0** is
-suggested for the open-access diffusion (add the chosen statement to the
-`\thanks` note if desired).
+The **whole repository — including this article edition (LaTeX source,
+figures, multimedia) — is distributed under the MIT License**
+(top-level `LICENSE`), with authorship credits to Frédéric Berthommier
+(article, simulations, package), **Pierre Badin** (transmission-line
+model of the vocal tract, original MATLAB codes) and **Laurent Girin**
+(glottal source and LPC resynthesis, original MATLAB codes).  The
+compiled article states this in its `\thanks` note; the canonical
+citable record is arXiv:2111.00868.

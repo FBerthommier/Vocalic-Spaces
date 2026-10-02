@@ -28,3 +28,11 @@ Build: `pdflatex tutorial` (twice).  Uses the same free toolchain as
   repository; cite it through the arXiv record (see `../CITATION.cff`).
 * Open-access LaTeX source of the article: `../paper/` (compile or use
   `../paper/arxiv_submission.zip`).
+
+## License
+
+This documentation and the whole repository are distributed under the
+**MIT License** (see `../LICENSE`): Frédéric Berthommier (article,
+simulations, package), Pierre Badin (transmission-line model, original
+MATLAB), Laurent Girin (glottal source and LPC resynthesis, original
+MATLAB).

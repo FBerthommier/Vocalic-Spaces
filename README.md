@@ -120,6 +120,16 @@ Every script accepts `--quick` for a fast preview, and the figure scripts
 accept `--reference` to plot the original MATLAB Monte-Carlo draws instead
 of the Python ones.
 
+## License
+
+The whole repository (code, data, documentation, multimedia, and the
+open-access LaTeX edition of the article) is distributed under the
+**MIT License** — see [`LICENSE`](LICENSE) — with authorship credits to
+**Frédéric Berthommier** (article, simulations, package),
+**Pierre Badin** (transmission-line model of the vocal tract, original
+MATLAB codes, ICP/GIPSA-lab) and **Laurent Girin** (glottal source and
+LPC vowel resynthesis, original MATLAB codes, GIPSA-lab).
+
 ## Validation summary (Python vs compiled MATLAB)
 
 | Quantity | Generic (lossless) | DRM (lossless) | Fant (lossy) |

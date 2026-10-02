@@ -1,10 +1,21 @@
 MIT License
 
-Copyright (c) 2021-2026 Frédéric Berthommier (GIPSA-lab, CNRS, Univ. Grenoble Alpes)
+Copyright (c) 2021-2026 Frederic Berthommier
+(Univ. Grenoble Alpes, CNRS, Grenoble INP, GIPSA-lab, France)
+-- article, simulations, coordination-function models, Python
+translation and repository packaging.
 
-Transmission-line model and LPC resynthesis chain: Python translation of
-MATLAB codes by Pierre Badin and Laurent Girin (ICP / GIPSA-lab, Grenoble),
-adapted with permission for the reproduction of the article below.
+Copyright (c) 2021-2026 Pierre Badin
+(ICP / GIPSA-lab, Grenoble, France)
+-- author of the transmission-line model of the vocal tract
+(TLM: spectrelec, aire2spectre*, vtn2frm_ftr_oral, nraph_oral,
+original MATLAB codes 1984-2006), here translated to Python.
+
+Copyright (c) 2021-2026 Laurent Girin
+(GIPSA-lab, Grenoble, France)
+-- author of the glottal source and LPC vowel resynthesis chain
+(Hfreq2lpc, gen_src_3, f_lpc_exc2sig, original MATLAB codes 2009),
+here translated to Python.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

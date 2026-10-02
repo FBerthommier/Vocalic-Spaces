@@ -10,3 +10,4 @@ __pycache__/
 *.toc
 *.blg
 *.spl
+*.aux 
