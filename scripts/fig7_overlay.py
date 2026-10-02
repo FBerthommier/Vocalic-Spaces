@@ -1,96 +1,83 @@
-"""Figure 7 -- overlay of the DRM C2 data with the human vowel space
-(ellipses at 2 sigma, Peterson & Barney 1952 male speakers).
+"""Figure 7 -- DRM C2 overlaid on the human vowel space ("Adult males",
+after Boe et al. 2019, Fig. 4, L = 17.5 cm), reproduced from the
+submitted figure.
 
-The article overlays it with the 7-parameter Monte-Carlo cloud of
-Boe et al. (2019, Fig. 4, L = 17.5 cm, Science Advances 5(12), eaaw3916,
-open access).  That cloud is not redistributable; if you digitize it into
-``data/boe2019_fig4.csv`` (two columns f1,f2 in Hz), it is drawn in blue
-and the figure matches the published one.  Without the file, the DRM C2
-domain and the human vowel space are still reproduced.
-
-Only the [i] area of the human vowel space is not covered by the DRM C2
-domain (2-parameter model).
+The human-space envelope, the 7-parameter Monte-Carlo cloud and the
+vowel ellipses are DIGITIZED from the submitted Figure7.jpg (calibration
+by the axis gridlines; see tools/digitize_fig7.py).  The DRM C2 loop is
+computed by this repository (red circles at the eight characteristic
+phases).  Axes in kHz with the F2 axis reversed, as in the original.
 """
 
 import os
+import sys
+
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.patches import Ellipse
 
-from figures_common import DATA, load_or_compute, load_mc, savefig
+from figures_common import DATA, load_or_compute, savefig
 from simu_drm import drm_cycle
 
-# Peterson & Barney (1952), 76 male speakers: mean F1/F2 (Hz) and SDs
-PB1952 = {
-    'i':  (270, 2290, 58, 204),
-    'ɪ':  (390, 1990, 71, 306),
-    'ɛ':  (530, 1840, 87, 394),
-    'æ':  (660, 1720, 95, 349),
-    'ɑ':  (730, 1090, 103, 328),
-    'ɔ':  (570, 840, 85, 313),
-    'ʊ':  (440, 1020, 90, 438),
-    'u':  (300, 870, 54, 321),
-    'ʌ':  (640, 1190, 105, 383),
-    'ɝ':  (490, 1350, 88, 341),
-}
+HERE = os.path.dirname(os.path.abspath(__file__))
+DIG = os.path.join(DATA, 'fig7_digitized.npz')   # digitized from the
+# submitted Figure7.jpg (Boe et al. 2019 overlay); build with
+# tools/digitize_fig7.py (calibration by the axis gridlines)
 
-
-def draw_ellipses(ax, k=2.0):
-    for lab, (f1, f2, s1, s2) in PB1952.items():
-        ax.add_patch(Ellipse((f2, f1), 2 * k * s2, 2 * k * s1,
-                             facecolor='0.85', edgecolor='0.55', lw=0.8, zorder=1))
-        ax.annotate(lab, (f2, f1), fontsize=11, ha='center', va='center',
-                    color='0.35', zorder=2)
-
-
-def load_boe2019():
-    """Optional digitized cloud of Boe et al. (2019), Fig. 4 (L = 17.5 cm)."""
-    path = os.path.join(DATA, 'boe2019_fig4.csv')
-    if os.path.exists(path):
-        d = np.loadtxt(path, delimiter=',', skiprows=1)
-        return d[:, 0], d[:, 1]
-    return None, None
+# vowel ellipses digitized / read on the submitted figure:
+# (F2, F1, semi-F2, semi-F1) in kHz, color, label
+ELLIPSES = [
+    (2.29, 0.285, 0.185, 0.062, 'red',       'i'),
+    (2.09, 0.415, 0.100, 0.075, 'red',       'I'),
+    (1.99, 0.545, 0.085, 0.065, 'red',       r'$\varepsilon$'),
+    (0.78, 0.305, 0.130, 0.075, 'green',     'u'),
+    (0.90, 0.425, 0.095, 0.065, 'green',     'U'),
+    (0.72, 0.555, 0.130, 0.075, 'c',         'o'),
+    (1.07, 0.625, 0.100, 0.065, 'navy',      r'$\Lambda$'),
+    (0.83, 0.705, 0.060, 0.050, 'navy',      'O'),
+    (1.42, 0.745, 0.070, 0.050, 'navy',      r'$\alpha$'),
+]
+ECOL = {'red': 'red', 'green': 'limegreen', 'c': 'c', 'navy': 'navy'}
 
 
 def main(reference=False):
-    d = load_or_compute('drm_cycle_py.npz', lambda: drm_cycle())
-    mc, src = load_mc('drm', reference=reference)
+    fig, ax = plt.subplots(figsize=(8.6, 7.6))
 
-    fig, ax = plt.subplots(figsize=(8.2, 6.8))
-    draw_ellipses(ax)
-
-    # optional: digitized cloud of Boe et al. (2019) 7-parameter Monte-Carlo
-    f1_boe, f2_boe = load_boe2019()
-    note = ''
-    if f1_boe is not None:
-        ax.plot(f2_boe, f1_boe, '.', color='cornflowerblue', ms=1.2, alpha=0.4,
-                zorder=3, label='Boë et al. (2019), Fig. 4, L=17.5 cm')
+    # ---- digitized human space -----------------------------------------
+    if os.path.exists(DIG):
+        d = np.load(DIG, allow_pickle=True)
+        env_f2, env_f1 = d['env_f2'], d['env_f1']
+        ax.fill(env_f2, env_f1, color='0.70', zorder=1)
+        ax.plot(env_f2, env_f1, 'k-', lw=1.6, zorder=3)
+        ax.plot(d['cloud_f2'], d['cloud_f1'], '.', color='b', ms=2.2,
+                alpha=0.55, zorder=2, rasterized=True)
     else:
-        note = '  (Boë et al. 2019 cloud: see docstring)'
+        raise SystemExit('missing %s : run tools/digitize_fig7.py' % DIG)
 
-    # DRM C2 domain: random (rho, theta) configurations + rho=1 cycle
-    ax.plot(mc['f2s'], mc['f1s'], '.', color='darkgreen', ms=1.2, alpha=0.5,
-            zorder=4, label='DRM C2 (rho, theta random)')
-    ax.plot(d['f2'], d['f1'], 'r-', lw=1.8, zorder=5, label='DRM C2, rho=1')
-    ax.plot(d['f2'][[20, 60, 100]], d['f1'][[20, 60, 100]], 'o', color='r',
-            ms=5, zorder=6)
-    ax.annotate('[i] not covered', (2290, 270), xytext=(1500, 250),
-                fontsize=10, arrowprops=dict(arrowstyle='->', color='0.3'))
+    # ---- vowel ellipses --------------------------------------------------
+    for f2, f1, w2, h1, col, lab in ELLIPSES:
+        ax.add_patch(Ellipse((f2, f1), 2 * w2, 2 * h1, fill=False,
+                             edgecolor=ECOL[col], lw=1.6, zorder=4))
+        ax.text(f2, f1, lab, fontsize=15, ha='center', va='center',
+                color=ECOL[col], zorder=5)
 
-    ax.set_xlim(500, 2800)
-    ax.set_ylim(100, 900)
-    ax.invert_yaxis()
-    ax.set_xlabel('F2 (Hz)')
-    ax.set_ylabel('F1 (Hz)')
-    ax.legend(loc='upper right', fontsize=9)
-    ax.set_title('DRM C2 vs human vowel space [C2 data: %s]%s' % (src, note),
-                 fontsize=10)
+    # ---- DRM C2 (computed here): red circles at the 8 vowel phases ------
+    d = load_or_compute('drm_cycle_py.npz', lambda: drm_cycle())
+    indb = np.array([1, 21, 31, 41, 61, 81, 91, 101]) - 1
+    ax.plot(d['f2'][indb] / 1000.0, d['f1'][indb] / 1000.0, 'o', ms=5,
+            mfc='none', mec='red', mew=1.2, ls='none', zorder=6)
+
+    # ---- axes: kHz, F2 reversed, F1 inverted (0.2 kHz on top) -----------
+    ax.set_xlim(2.7, 0.2)
+    ax.set_ylim(1.03, 0.12)
+    ax.set_xticks([2.5, 2.0, 1.5, 1.0, 0.5])
+    ax.set_yticks([0.2, 0.4, 0.6, 0.8, 1.0])
+    ax.set_xlabel('F2 (kHz)')
+    ax.set_ylabel('F1 (kHz)')
+    ax.set_title('Adult males')
+    ax.grid(color='0.85', lw=0.6, zorder=0)
     savefig(fig, 'Figure7.png')
 
 
 if __name__ == '__main__':
-    import argparse
-    ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('--reference', action='store_true',
-                    help='use the original MATLAB draws instead of the Python ones')
-    main(ap.parse_args().reference)
+    main()
