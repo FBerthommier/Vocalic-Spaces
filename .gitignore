@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+*.egg-info/
+
+# LaTeX build artifacts (sources and .bbl are versioned, not the build)
+*.aux
+*.log
+*.out
+*.toc
+*.blg
+*.spl

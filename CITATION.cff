@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software, please cite it (and the article)
+  as below.
+type: software
+title: 'vowel-space-model: code for "A mathematical model of the vowel space"'
+authors:
+  - family-names: Berthommier
+    given-names: Frédéric
+    email: frederic.berthommier@gipsa-lab.grenoble-inp.fr
+    affiliation: Univ. Grenoble Alpes, CNRS, Grenoble INP, GIPSA-lab
+repository-code: 'https://github.com/FBerthommier/vocalic-spaces'
+abstract: >-
+  Python translation and reproduction package of the simulations of the
+  article "A mathematical model of the vowel space": three-phase mixing
+  function, coordination function, generic / DRM / Fant vocal-tract
+  models, Badin transmission-line formant computation, LPC vowel
+  resynthesis, Monte-Carlo C1/C2 conditions, figures and multimedia.
+keywords:
+  - speech production
+  - vowel space
+  - vocal tract modeling
+  - transmission line model
+  - formants
+  - articulatory-acoustic inversion
+license: MIT
+version: 1.0.0
+date-released: '2026-10-02'
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Berthommier
+      given-names: Frédéric
+  title: 'A mathematical model of the vowel space'
+  journal: 'arXiv preprint arXiv:2111.00868 (JASA Express Letters submission)'
+  year: 2021
+  doi: 10.48550/arXiv.2111.00868

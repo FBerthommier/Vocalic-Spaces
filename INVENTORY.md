@@ -1,0 +1,129 @@
+# Inventory — code and data needed by the publication
+
+Mapping between each element of *Resubmitted-2Colums.pdf* ("A mathematical
+model of the vowel space", F. Berthommier, JASA-EL submission / arXiv:2111.00868)
+and: (1) the original MATLAB files (in `programs/`), (2) the data files that
+back it, (3) the Python equivalent in this repository.
+
+Legend — original locations (NOT modified by this work):
+
+* `CompileTLM2024/Supplement/` = the supplement zip files (SuppPub1-3)
+  submitted with the article;
+* `CompileTLM2024/` = the full working directory (compiled `.mexw64` chain);
+* `programs/` = research directory (exploratory scripts, saved data).
+
+## Open-access edition of the article (`paper/`)
+
+The submitted `Resubmitted-2Colums.pdf` uses the proprietary JASA
+template and cannot be redistributed as such.  `paper/paper.tex`
+rebuilds the article in an equivalent two-column layout with free
+components only (standard `article` class, natbib/plainnat, TIPA,
+newtx).  The body text is carried over verbatim from
+`programs/Resoumission/Resubmitted/Paper.tex`; the JASA macros
+(`JASA.cls`, `\email`, `\affiliation`, `\docsection`, `\multimedia`,
+`\linenomath`, `\reprintcolumnwidth`, `jasaauthyear2.bst`) are replaced
+as documented in `paper/README.md`.  The compiled article is **not**
+hosted in this repository: the canonical version is the arXiv record
+(arXiv:2111.00868), and `paper/arxiv_submission.zip` is the package to
+(maintain the) submission.
+
+## Didactic documentation (`docs/`)
+
+`docs/tutorial.tex` + `docs/tutorial.pdf` (US English, free LaTeX
+toolchain): a step-by-step didactic introduction to the theoretical
+content of the article (Schroeder-Ehrenfest relation, three-phase mixing
+function, generic model, coordination function, DRM/Fant models, C1/C2
+conditions, quadratic bias), with the formant table computed by this
+repository, exercises, a guided tour of the scripts, and pointers to the
+arXiv article.  Built with `pdflatex tutorial` (twice).
+
+## Figures
+
+## Figures
+
+| Fig. | Content | Original MATLAB | Reference data | In this repo |
+|---|---|---|---|---|
+| 1 | vowel space of the generic model + 8 area functions with (a1, a2) | `CompileTLM2024/Supplement/simuGEN.m` (cycle); `programs/desfonc2b.m` (8 panels); figures `GEN.fig`, `GENexpcos.fig` | `Supplement/simuGEN.mat` (122 phases) | `scripts/simu_gen.py`, `scripts/fig1_generic.py` → `figures/Figure1.png` |
+| 2 | coordination function for (a1, a2), Table I | `programs/essaijkfigure.m` (uses `ijk2cor4.m`), `desfonc*.m`; figure `Figure2.fig` | none (analytic) | `vsmodel/models.py::ijk2psi`, `scripts/fig2_coordination.py` |
+| 3 | DRM C1 + C2 (ρ=1) + SE / "est" estimates | `CompileTLM2024/Supplement/simuDRM.m`, `CompileTLM2024/simuDRM.m` (full), `programs/simufonc5.m/5c/7.m` (C1 + est) | `Supplement/simuDRM.mat` (122 phases); `programs/simurandDRM4expcos.mat` (C1 1000 pts, C2 5000 pts, cycle 62 pts) | `scripts/simu_drm.py`, `scripts/monte_carlo.py drm`, `scripts/fig3_drm.py` |
+| 4 | (a) Fant model design (redrawn from Badin et al. 1990 Fig. 1); (b) Fant C1 + C2 | `CompileTLM2024/Supplement/simuFANT.m`, `CompileTLM2024/simuFANT.m` (full); `programs/simufonc6v3.m` (fig), `simufonc6randv3.m` (C1/C2) | `Supplement/simuFANT.mat` (62 phases); `programs/simurandFANT2.mat` (C1 1000, C2 5000, cycle) | `scripts/simu_fant.py`, `scripts/monte_carlo.py fant`, `scripts/fig4_fant.py` |
+| 5 | dfi vs cosine coefficients, C1 dots vs C2 surfaces, DRM (a) / Fant (b) | interactive plots from the `simurand*.mat` data (no dedicated .m found; relations as in `figdf.m`) | `programs/simurandDRM4expcos.mat`, `simurandFANT2.mat` | `scripts/fig5_dfi.py` |
+| 6 | df estimates for DRM C2 (quadratic bias, bisecting line) | `programs/figdf.m` | `programs/simurandDRM4expcos.mat` | `scripts/fig6_df_fit.py` |
+| 7 | DRM C2 vs Boë et al. (2019) Fig. 4 cloud + human vowel ellipses | no dedicated .m found; overlay drawn interactively (Boë cloud from their paper, ellipses from standard vowel-space data) | DRM C2: `simurandDRM4expcos.mat`; Boë cloud: digitize their open-access figure (see `fig7_overlay.py`) | `scripts/fig7_overlay.py` |
+
+## Tables
+
+| Table | Content | Where computed |
+|---|---|---|
+| I | {i,j,k} → {Ω, Ψ1, Ψ2} for (a1, a2) | `vsmodel/models.py::ijk2psi` (checked in `scripts/validate.py`, exact) |
+| II | DRM coordination setup (P1, P2 from the generic model at x ∈ {0, L/3}) | `vsmodel/models.py::drm_setup` (via `ijk2psi`) |
+| III | Fant model {Ω, Ψ1, Ψ2} for {Xc, Ac, Al, L} | `vsmodel/models.py::fant_setup` |
+| IV | formant variations vs constrictions (DRM rules, Mrayati et al. 1988) | qualitative, reproduced by the Monte-Carlo of `scripts/monte_carlo.py drm` |
+
+## Multimedia (Mm.)
+
+| Mm. | Content | Original | In this repo |
+|---|---|---|---|
+| 1 | 8 vowel sounds, generic model (wav, 180 Ko) | `Resubmitted/MM1.wav`; produced by `programs/desfonc2b.m` + `voysynth.m` chain | `multimedia/original/MM1.wav`; regenerated by `scripts/make_multimedia.py` → `multimedia/generated/MM1.wav` |
+| 2 | area function 0→2π, generic (avi, 145 Ko) | `Resubmitted/MM2.avi` | regenerated as `MM2.gif`/`.mp4` |
+| 3 | area function 0→2π, DRM (avi, 65 Ko) | `Resubmitted/MM3.avi` | regenerated as `MM3.gif`/`.mp4` |
+| 4 | 8 vowel sounds, DRM (wav) | `Resubmitted/MM4.wav`; `CompileTLM2024/simuDRM.m` + `voysynthx.m` | regenerated `MM4.wav` |
+| 5 | area function 0→2π, Fant (avi, 63 Ko) | `Resubmitted/MM5.avi` | regenerated as `MM5.gif`/`.mp4` |
+| 6 | 8 vowel sounds, Fant (wav) | `Resubmitted/MM6.wav`; `CompileTLM2024/simuFANT.m` | regenerated `MM6.wav` |
+
+## Supplementary material (as submitted)
+
+| SuppPub | Content | Files |
+|---|---|---|
+| SuppPub1.zip | `simuGEN.m` + `simuGEN.mat` | copies in `matlab_supplement/` |
+| SuppPub2.zip | `simuDRM.m` + `simuDRM.mat` | copies in `matlab_supplement/` |
+| SuppPub3.zip | `simuFANT.m` + `simuFANT.mat` | copies in `matlab_supplement/` |
+
+`matlab_supplement/simuDRM.m` is byte-identical to the author's working
+file `simuDRM-remplaçant.m` (copy of that name included for
+traceability): it starts with `load simuDRM.mat`, so Fig. 3 is replotted
+from the reference formants without any compiled TLM — see
+`matlab_supplement/README.md`.
+
+Each supplement script contains the TLM call as a commented line
+("Load of your own transmission line model"): the formants were computed
+with the compiled `TLM.mexw64` / `TLM3specx.mexw64` chain, whose source
+(`TLM.m` = full single-file version) is also copied in `matlab_supplement/`.
+
+## Core computational chain (MATLAB, ICP-Grenoble)
+
+| Function | Role | Python |
+|---|---|---|
+| `TLMx.m` / `TLM3specx.m` | entry points (F1, F2[, F3, spectrum]) | `vsmodel/tlm.py::TLM, TLM3spec` |
+| `vtn2frm_ftr_oral.m` | formant (pole) search: peak-pick + refinement | `vsmodel/tlm.py::vtn2frm_ftr_oral` |
+| `nraph_oral.m` | complex-plane secant refinement (1984-87, H. Sanchez / P. Badin) | `vsmodel/tlm.py::nraph_oral` |
+| `aire2spectre_oral.m`, `aire2spectre_cor_oral.m` | transfer function (+ pole-corrected) | same names in `vsmodel/tlm.py` |
+| `spectrelec.m` | electrical analog of the tube cascade (Fant losses, wall vibration) | `vsmodel/tlm.py::spectrelec` |
+| `peakpick.m` | local maxima detection | `vsmodel/tlm.py::peakpick` |
+| `voysynthx.m`, `Hfreq2lpc.m`, `gen_src_3.m`, `f_lpc_exc2sig.m`, `wavwrite.m` | vowel resynthesis (L. Girin) | `vsmodel/synthesis.py` |
+| `expcos.m`/`expif` | soft rectifier (Eq. 4b) | `vsmodel/models.py::expif` |
+| `ijk2psi` (in `simuDRM.m`) | {i,j,k} → {Ω, Ψ1, Ψ2} transform | `vsmodel/models.py::ijk2psi` |
+| `excit.mat` | fixed 0.5 s glottal excitation (ASCII) used by the LPC chain | `data/reference/excit.npy` |
+
+## Known defects found in the previous Python drafts
+
+The earlier drafts in `programs/CompileTLM2024/Pythoncode/` and
+`Vocalic_space_python/` are not runnable and contain translation errors;
+they were rewritten here. Main defects (for the record):
+
+1. `vtn2frm_ftr_oral.py`: missing `return`, wrong arity in calls, dead
+   duplicated code, `while` loop semantics broken;
+2. MATLAB 1-based column indices kept verbatim (`F_form[I, 4]`, `[I, 2]`
+   on arrays laid out differently);
+3. `aire2spectre_oral.py`: attribute access on a dict (`ORAL.A`),
+   `no_vibration`/global `nv` dropped (lossless/lossy setting lost),
+   complex-frequency handling wrong (`w = 2πjf` instead of `w = 2πf`);
+4. `spectrelec.py`: function defined twice with different signatures, the
+   surviving one returning neither `YE` nor matching the call sites;
+5. `nraph_oral.py`: called `aire2spectre_cor_oral` with a wrong signature;
+6. `simu*.py`: undefined imports (`TLM`, `voysynth`, `wavwrite`), MATLAB
+   `hold on` translated literally, malformed `ijk` arrays, `round`
+   semantics (banker's rounding vs MATLAB round-half-away).
+
+All of these are fixed in `vsmodel/`; see `figures/validation_report.txt`
+for the quantitative agreement with the compiled MATLAB reference.

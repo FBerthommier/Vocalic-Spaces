@@ -1,0 +1,27 @@
+Validation report -- Python translation vs MATLAB reference data
+==============================================================================
+GENERIC model (lossless, n=100, 31 pts, 3 s)
+  [OK  ] neutral f1b (ref 488.0157)                 max err =   0.0481 Hz (tol 1)
+  [OK  ] neutral f2b (ref 1464.1499)                max err =   0.0951 Hz (tol 1)
+  [OK  ] cycle F1 (122 phases)                      max err =   0.2082 Hz (tol 1)
+  [OK  ] cycle F2 (122 phases)                      max err =   0.4900 Hz (tol 1)
+DRM model (lossless, n=120, 32 pts, 3 s)
+  [OK  ] neutral f1b (ref 488.0172)                 max err =   0.0481 Hz (tol 1)
+  [OK  ] neutral f2b (ref 1464.1912)                max err =   0.0951 Hz (tol 1)
+  [OK  ] cycle F1                                   max err =   0.2765 Hz (tol 1)
+  [OK  ] cycle F2                                   max err =   0.7756 Hz (tol 1)
+  [OK  ] cycle a1 coefficients                      max err =   0.0000 - (tol 1e-09)
+  [OK  ] cycle a2 coefficients                      max err =   0.0000 - (tol 1e-09)
+  [OK  ] cycle f1est ("est" relation)               max err =   0.8436 Hz (tol 2)
+FANT model (lossy, n=200, 32 pts, 7 s)
+  [OK  ] neutral f2b (ref 1117.8594)                max err =   0.0494 Hz (tol 1)
+  [OK  ] cycle F2 (62 phases)                       max err =   0.4775 Hz (tol 1)
+  [OK  ] neutral f1b (ref 405.1075, known lossy drift) max err =   1.4745 Hz (tol 3)
+  [OK  ] cycle F1 (62 phases, known lossy drift)    max err =   2.1152 Hz (tol 3)
+  [OK  ] cycle a1 coefficients                      max err =   0.0000 - (tol 1e-09)
+  [OK  ] cycle a2 coefficients                      max err =   0.0000 - (tol 1e-09)
+COORDINATION function (Table I)
+  [OK  ] Psi1 = (2, cos^-1 pi/6)                    max err =   0.0000 - (tol 1e-12)
+  [OK  ] Psi2 = (0, pi/2)                           max err =   0.0000 - (tol 1e-12)
+==============================================================================
+OVERALL: ALL CHECKS PASSED

@@ -1,0 +1,155 @@
+\begin{thebibliography}{22}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Atal et~al.(1978)Atal, Chang, Mathews, and Tukey]{Atal1978}
+B.~S. Atal, J.~J. Chang, M.~V. Mathews, and J.~W. Tukey.
+\newblock Inversion of articulatory‐to‐acoustic transformation in the vocal
+  tract by a computer‐sorting technique.
+\newblock \emph{The Journal of the Acoustical Society of America}, 63\penalty0
+  (5):\penalty0 1535--1555, 1978.
+
+\bibitem[Badin and Fant(1984)]{BadinFant1984}
+P.~Badin and G.~Fant.
+\newblock Notes on vocal tract computations.
+\newblock Stl- qpsr 2-3/1984, Royal Institute of Technology, Stockholm, Sweden,
+  1984.
+
+\bibitem[Badin et~al.(1990)Badin, Perrier, Boë, and Abry]{Badin1990}
+P.~Badin, P.~Perrier, L.‐J. Boë, and C.~Abry.
+\newblock Vocalic nomograms: Acoustic and articulatory considerations upon
+  formant convergences.
+\newblock \emph{The Journal of the Acoustical Society of America}, 87\penalty0
+  (3):\penalty0 1290--1300, 1990.
+
+\bibitem[Boë and Perrier(1990)]{BoePerrier1990}
+Louis-Jean Boë and Pascal Perrier.
+\newblock Comments on “distinctive regions and modes: A new theory of speech
+  production” by m. mrayati, r. carr\'{e} and b. gu\'{e}rin.
+\newblock \emph{Speech Communication}, 9\penalty0 (3):\penalty0 217--230, 1990.
+\newblock ISSN 0167-6393.
+
+\bibitem[Boë et~al.(1992)Boë, Perrier, and Bailly]{Boe1992}
+Louis-Jean Boë, Pascal Perrier, and Gérard Bailly.
+\newblock The geometric vocal tract variables controlled for vowel production:
+  proposals for constraining acoustic-to-articulatory inversion.
+\newblock \emph{Journal of Phonetics}, 20\penalty0 (1):\penalty0 27--38, 1992.
+\newblock ISSN 0095-4470.
+
+\bibitem[Boë et~al.(2019)Boë, Sawallis, Fagot, Badin, Barbier, Captier,
+  Ménard, Heim, and Schwartz]{Boe2019}
+Louis-Jean Boë, Thomas~R. Sawallis, Joël Fagot, Pierre Badin, Guillaume
+  Barbier, Guillaume Captier, Lucie Ménard, Jean-Louis Heim, and Jean-Luc
+  Schwartz.
+\newblock Which way to the dawn of speech?: Reanalyzing half a century of
+  debates and data in light of speech science.
+\newblock \emph{Science Advances}, 5\penalty0 (12):\penalty0 eaaw3916, 2019.
+
+\bibitem[Carré(2004)]{Carre2004}
+René Carré.
+\newblock From an acoustic tube to speech production.
+\newblock \emph{Speech Communication}, 42\penalty0 (2):\penalty0 227--240,
+  2004.
+\newblock ISSN 0167-6393.
+
+\bibitem[Carré(2009)]{Carre2009}
+René Carré.
+\newblock Dynamic properties of an acoustic tube: Prediction of vowel systems.
+\newblock \emph{Speech Communication}, 51\penalty0 (1):\penalty0 26--41, 2009.
+\newblock ISSN 0167-6393.
+
+\bibitem[Fant(1960)]{Fant1960}
+G.~Fant.
+\newblock \emph{Acoustic Theory of Speech Production}.
+\newblock Mouton, 1960.
+
+\bibitem[Fant and Pauli(1974)]{FantPauli1974}
+G.~Fant and S.~Pauli.
+\newblock Spatial characteristics of vocal tract resonance modes.
+\newblock In \emph{Proceeding of the Speech Communication Seminar}, 1974.
+
+\bibitem[Fenk-Oczlon(2017)]{FenkOczlon2017}
+Gertraud Fenk-Oczlon.
+\newblock What vowels can tell us about the evolution of music.
+\newblock \emph{Frontiers in Psychology}, 8:\penalty0 1581, 2017.
+\newblock ISSN 1664-1078.
+\newblock \doi{10.3389/fpsyg.2017.01581}.
+
+\bibitem[Fitch et~al.(2016)Fitch, de~Boer, Mathur, and Ghazanfar]{Fitch2016}
+W.~Tecumseh Fitch, Bart de~Boer, Neil Mathur, and Asif~A. Ghazanfar.
+\newblock Monkey vocal tracts are speech-ready.
+\newblock \emph{Science Advances}, 2\penalty0 (12):\penalty0 e1600723, 2016.
+
+\bibitem[Heinz(1967)]{Heinz1967}
+J.~M. Heinz.
+\newblock Perturbation functions for the determination of vocal-tract area
+  functions from vocal-tract eigenvalues.
+\newblock Stl- qpsr 1/1967, Royal Institute of Technology, Stockholm, Sweden,
+  1967.
+
+\bibitem[Mermelstein(1967)]{Mermelstein1967}
+P.~Mermelstein.
+\newblock Determination of the vocal‐tract shape from measured formant
+  frequencies.
+\newblock \emph{The Journal of the Acoustical Society of America}, 41\penalty0
+  (5):\penalty0 1283--1294, 1967.
+
+\bibitem[Mrayati et~al.(1988)Mrayati, Carré, and Guérin]{Mrayati1988}
+{M.} Mrayati, {R.} Carré, and {B.} Guérin.
+\newblock Distinctive regions and modes: A new theory of speech production.
+\newblock \emph{Speech Commun.}, 7\penalty0 (3):\penalty0 257–286, October
+  1988.
+\newblock ISSN 0167-6393.
+
+\bibitem[Schroeder(1967)]{Schroeder1967}
+M.~R. Schroeder.
+\newblock Determination of the geometry of the human vocal tract by acoustic
+  measurements.
+\newblock \emph{The Journal of the Acoustical Society of America}, 41\penalty0
+  (4B):\penalty0 1002--1010, 1967.
+
+\bibitem[Stevens and House(1955)]{StevensHouse1955}
+Kenneth~N. Stevens and Arthur~S. House.
+\newblock Development of a quantitative description of vowel articulation.
+\newblock \emph{The Journal of the Acoustical Society of America}, 27\penalty0
+  (3):\penalty0 484--493, 1955.
+
+\bibitem[Story(2005)]{Story2005}
+Brad~H. Story.
+\newblock A parametric model of the vocal tract area function for vowel and
+  consonant simulation.
+\newblock \emph{The Journal of the Acoustical Society of America}, 117\penalty0
+  (5):\penalty0 3231--3254, 2005.
+
+\bibitem[Story(2006)]{Story2006}
+Brad~H. Story.
+\newblock Technique for “tuning” vocal tract area functions based on
+  acoustic sensitivity functions.
+\newblock \emph{The Journal of the Acoustical Society of America}, 119\penalty0
+  (2):\penalty0 715--718, 2006.
+
+\bibitem[Story and Titze(1998)]{StoryTitze1998}
+{Brad H.} Story and {Ingo R.} Titze.
+\newblock Parameterization of vocal tract area functions by empirical
+  orthogonal modes.
+\newblock \emph{Journal of Phonetics}, 26\penalty0 (3):\penalty0 223--260, July
+  1998.
+\newblock ISSN 0095-4470.
+
+\bibitem[Ungeheuer(1962)]{Ungeheuer62}
+G.~Ungeheuer.
+\newblock \emph{Elemente einer akustischen Theorie der Vokalartikulation}.
+\newblock Springer-Verlag, Berlin, 1962.
+
+\bibitem[Yehia and Itakura(1996)]{YehiaItakura1996}
+Hani Yehia and Fumitada Itakura.
+\newblock A method to combine acoustic and morphological constraints in the
+  speech production inverse problem.
+\newblock \emph{Speech Communication}, 18\penalty0 (2):\penalty0 151--174,
+  1996.
+\newblock ISSN 0167-6393.
+
+\end{thebibliography}
