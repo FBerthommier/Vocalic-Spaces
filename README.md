@@ -1,5 +1,7 @@
 # A mathematical model of the vowel space — code repository
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23241627.svg)](https://doi.org/10.5281/zenodo.23241627)
+
 This repository contains the complete, self-contained **Python** code needed
 to reproduce the simulations, figures, tables and multimedia files of:
 
@@ -183,6 +185,10 @@ If you use this code, please cite the article:
   doi     = {10.48550/arXiv.2111.00868}
 }
 ```
+
+The repository itself (release v1.0) has the Zenodo DOI
+[10.5281/zenodo.23241627](https://doi.org/10.5281/zenodo.23241627)
+(see also `CITATION.cff`).
 
 ## Authors and acknowledgements
 

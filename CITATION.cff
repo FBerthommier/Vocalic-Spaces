@@ -9,6 +9,10 @@ authors:
     given-names: Frédéric
     email: frederic.berthommier@gipsa-lab.grenoble-inp.fr
     affiliation: Univ. Grenoble Alpes, CNRS, Grenoble INP, GIPSA-lab
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23241627
+    description: Zenodo deposit for this repository (release v1.0)
 repository-code: 'https://github.com/FBerthommier/Vocalic-Spaces'
 abstract: >-
   Python translation and reproduction package of the simulations of the
