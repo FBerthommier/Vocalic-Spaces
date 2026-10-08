@@ -1,0 +1,48 @@
+{
+  "title": "Vocalic-Spaces: Python reproduction package for \"A mathematical model of the vowel space\" (arXiv:2111.00868v3)",
+  "description": "<p>Complete, self-contained Python code reproducing the simulations, figures, tables and multimedia files of the research article <em>A mathematical model of the vowel space</em> (F. Berthommier, arXiv:2111.00868v3, JASA-Express Letters submission).</p><p><strong>Contents:</strong></p><ul><li><code>vsmodel</code> \u2013 Python translation of the ICP/GIPSA-lab transmission-line model of the vocal tract (P. Badin: formant computation with Fant 1960 losses and wall vibration, complex-plane pole search), of the three-phase mixing and coordination functions (generic model, DRM 4-tube model, Fant 4-parameter model), and of the LPC vowel resynthesis chain (L. Girin: Rosenberg glottal source, Levinson/LPC lattice);</li><li><code>scripts</code> \u2013 one script per figure (Figures 1\u20137), Monte-Carlo simulations in conditions C1/C2, multimedia regeneration (Mm. 1\u20136: vowel sounds and area-function movies), strict verification of the paper content and quantitative validation against the compiled MATLAB reference (formants within ~1 Hz, Fourier coefficients at machine precision);</li><li><code>data</code> \u2013 MATLAB reference data converted to .npz and regenerated data;</li><li><code>docs</code> \u2013 didactic introduction to the theory (US English);</li><li><code>paper</code> \u2013 open-access two-column LaTeX edition of the article (free template) and the arXiv submission package;</li><li><code>matlab_supplement</code> \u2013 the original MATLAB supplement scripts with their reference data.</li></ul><p><strong>Authorship:</strong> Fr\u00e9d\u00e9ric Berthommier (article, simulations, coordination-function models, Python translation and packaging); Pierre Badin (transmission-line model of the vocal tract, original MATLAB codes); Laurent Girin (glottal source and LPC vowel resynthesis, original MATLAB codes).</p>",
+  "creators": [
+    {
+      "name": "Berthommier, Frédéric",
+      "affiliation": "Univ. Grenoble Alpes, CNRS, Grenoble INP, GIPSA-lab, France",
+      "email": "frederic.berthommier@gipsa-lab.grenoble-inp.fr"
+    },
+    {
+      "name": "Badin, Pierre",
+      "affiliation": "ICP / GIPSA-lab, Grenoble, France"
+    },
+    {
+      "name": "Girin, Laurent",
+      "affiliation": "GIPSA-lab, Univ. Grenoble Alpes, CNRS, Grenoble INP, France"
+    }
+  ],
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "MIT",
+  "keywords": [
+    "speech production",
+    "vowel space",
+    "vocal tract modeling",
+    "transmission line model",
+    "formants",
+    "articulatory-acoustic mapping",
+    "coordination function",
+    "distinctive region model",
+    "speech synthesis"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://arxiv.org/abs/2111.00868v3",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "10.48550/arXiv.2111.00868",
+      "relation": "references",
+      "resource_type": "publication-preprint",
+      "scheme": "doi"
+    }
+  ],
+  "language": "eng",
+  "version": "1.0.0"
+}
